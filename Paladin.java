@@ -1,23 +1,21 @@
-import java.util.Random;
 
 public class Paladin extends PlayerCharacter {
 
 
-    int wisdom;
-    int constitution;
+    private int wisdom;
+    private int constitution;
 
 
     public Paladin(String newName) {
         name = newName;
         System.out.println("A Paladin named " + name + " hath been created.");
 
-        Random rand = new Random();
 
-        strength = 10 + rand.nextInt(6)+1;
-        intelligence = 15 + rand.nextInt(6)+1;
-        agility = 5 + rand.nextInt(6)+1;
-        wisdom = 10 + rand.nextInt(6)+1;
-        constitution = 10 + rand.nextInt(6)+1;
+        strength = 10 + Die.roll();
+        intelligence = 15 + Die.roll();
+        agility = 5 + Die.roll();
+        wisdom = 10 + Die.roll();
+        constitution = 10 + Die.roll();
 
 
         hp = hpmax = strength + (2*constitution);

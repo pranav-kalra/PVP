@@ -1,23 +1,25 @@
-import java.util.Random;
+import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Fighter PlayerA = new Fighter("MoAli");
-        PlayerA.showStats();
 
-        Mage PlayerB = new Mage("HarryPotter");
-        PlayerB.showStats();
+        ArrayList<PlayerCharacter> players = new ArrayList<PlayerCharacter>(); //character list
+        players.add(new Fighter("MoAli"));
+        players.add(new Mage("HarryPotter"));
+        players.add(new Priest("JSerra"));
+        players.add(new Paladin("Knighttime") );
+        System.out.println(players.size()); //character counter
 
-        Priest PlayerC = new Priest("JSerra");
-        PlayerC.showStats();
 
-        Paladin PlayerD = new Paladin("Knighttime");
-        PlayerD.showStats();
 
-//        PlayerCharacter playerX = new PlayerCharacter();
-
+        for (PlayerCharacter x: players) {
+            if (x instanceof Priest) {
+                System.out.println("Here is a priest");
+                x.showStats();
+            }
+        }
 
 
 

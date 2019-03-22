@@ -1,21 +1,19 @@
-import java.util.Random;
 
 public class Mage extends PlayerCharacter {
 
 
-    int wisdom;
+    private int wisdom;
 
 
     public Mage(String newName) {
         name = newName;
         System.out.println("A Mage named " + name + " hath been created.");
 
-        Random rand = new Random();
 
-        strength = 7 + rand.nextInt(6)+1;
-        intelligence = 15 + rand.nextInt(6)+1;
-        agility = 8 + rand.nextInt(6)+1;
-        wisdom = 10 + rand.nextInt(6)+1;
+        strength = 7 + Die.roll();
+        intelligence = 15 + Die.roll();
+        agility = 8 + Die.roll();
+        wisdom = 10 + Die.roll();
 
 
         hp = hpmax = strength;
